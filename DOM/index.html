@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM JS</title>
+  </head>
+  <body>
+    <h1 id="titulo">Manejo DOM con JS</h1>
+    <br />
+    <form id="forma">
+        Nombre: <input type="text" id="nombre"/>
+        <br />
+        <br />
+        Apellido: <input type="text" id="apellido"/>
+        <br />
+    </form>
+
+    <script>
+        const forma = document.getElementById('forma');
+
+        forma.addEventListener('focus', cambiar, true);
+        forma.addEventListener('blur', regresar, true);
+
+        function cambiar(evento){
+            let componente = evento.target;
+            console.log(componente);
+            componente.style.background = 'yellow';
+        }
+         
+        function regresar(evento){
+            evento.target.style.background = 'white';
+        }
+    </script>
+  </body>
+</html>
